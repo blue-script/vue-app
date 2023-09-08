@@ -64,10 +64,8 @@
                         </div>
                     </div>
                     <div class="app__body-middle">
-                        <div class="app_reuslt"
-                             v-for="(race, k) in results"
-                             v-show="showResultRace[k]"
-                             @click="goToResult(k)">
+                        <div class="app_reuslt" v-for="(race, k) in results" v-show="showResultRace[k]"
+                            @click="goToResult(k)">
                             <div class="app__result-score">
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <div class="app__result-count">{{ race.points }}</div>
@@ -148,6 +146,10 @@
 
     </div>
 
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+    <script>
+        vkBridge.send("VKWebAppInit", {});
+    </script>
     <script src="js/vue.js"></script>
     <script src="js/const.js"></script>
     <script src="js/main.js"></script>
